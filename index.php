@@ -9,12 +9,12 @@ $text        = $_POST["text"];
 // is the user registered?
 $isRegistered = true;
 
-if ($text == "" && !$isRegistered){
+if ($text == " " && !$isRegistered){
     // user is registered and string is empty
     $menu = new Menu($text, $sessionId);
    $menu->mainMenuRegistered();
    
-}elseif($text == "" && $isRegistered){
+}elseif($text == " " && $isRegistered){
     // user is unregistered and string is empty
     $menu = new Menu($text, $sessionId);
     $menu->mainMenuUnRegistered();
