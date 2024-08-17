@@ -1,4 +1,5 @@
 <?php
+
 include_once 'menu.php';
 // Read the variables sent via POST from our API
 $sessionId   = $_POST["sessionId"];
@@ -7,14 +8,14 @@ $phoneNumber = $_POST["phoneNumber"];
 $text        = $_POST["text"];
 
 // is the user registered?
-$isRegistered = true;
+$isRegistered = false;
 
-if ($text == " " && !$isRegistered){
+if ($text == "" && !$isRegistered){
     // user is registered and string is empty
     $menu = new Menu($text, $sessionId);
    $menu->mainMenuRegistered();
    
-}elseif($text == " " && $isRegistered){
+}elseif($text == "" && $isRegistered){
     // user is unregistered and string is empty
     $menu = new Menu($text, $sessionId);
     $menu->mainMenuUnRegistered();
@@ -24,10 +25,10 @@ if ($text == " " && !$isRegistered){
     $textArray = explode("*", $text);
      switch ($textArray[0]) {
         case 1:
-            $menu->$registerMenu($textArray);
+            $menu->registerMenu($textArray);
             break;
-            default; 
-            echo "END Invalid input.Please try again";
+            default:
+            echo "END Invalid input. Please try again";
         }
 }else{
     // user is registered and string is not empty
