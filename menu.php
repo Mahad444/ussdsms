@@ -16,7 +16,7 @@ class Menu {
         echo $response;
     }
     public function mainMenuUnRegistered() {
-        $response = "CON Welcome to GAS SUPLLIER!!\n";
+        $response = "CON Welcome to MUhib Heights!!\n";
         $response .= "1. Register\n";
         echo $response;
     }
@@ -25,11 +25,14 @@ class Menu {
         $level = count($textArray);
         if ($level == 1) {
             echo "CON Please Enter your full name";
-        } elseif ($level == 2) {
+        } 
+        elseif ($level == 2) {
          echo "CON Please enter your PIN";
-        }elseif ($level == 3) {
+        }
+        elseif ($level == 3) {
             echo "CON Please confirm your PIN";
-        }elseif ($level == 4) {
+        }
+        elseif ($level == 4) {
             $name = $textArray[1];
             $pin = $textArray[2];
             $confirmPin = $textArray[3];
