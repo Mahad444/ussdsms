@@ -44,6 +44,7 @@ class Menu {
         }
         
     }
+    // impliment the sendMoneyMenu, option 
     public function sendMoneyMenu($textArray) {}
     public function withdrawMoneyMenu($textArray) {}
     public function checkBalanceMenu($textArray) {}
